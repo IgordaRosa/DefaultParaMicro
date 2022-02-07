@@ -1,0 +1,51 @@
+/*
+ * File:   header.h
+ * Author: Igor da Rosa 
+ *
+ * 
+ */
+#ifndef HEADER_H
+#define HEADER_H
+
+#include <xc.h> //include padrão
+#include <pic16f877a.h>//padrão do PIC
+#include <stdio.h> //padrão do C
+
+//inclusão de outros headers
+
+//frequencia do cristal
+#define _XTAL_FREQ 4000000
+
+//definições
+
+//declaração de variaveis globais
+//__bit...
+
+//função padrão de inicialização
+void inicializar()
+{
+    //configuração de inicialização
+    OPTION_REG = 127; //configura o PIC
+    
+    //inicialização das portas
+    TRISB = 255;//inputs 1111 1111 = 255
+    TRISC = 0;//outputs 0000 0000 = 0
+    //TRISD = ?
+    
+    //clear nas ports
+    PORTB = 255;
+    PORTC = 0;
+    PORTD = 0;
+};
+
+//função de delay
+void DelaySegundo()
+{
+  __delay_ms(1000);  
+};
+
+//funções
+
+
+
+#endif
