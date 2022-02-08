@@ -49,7 +49,7 @@ void inicializar()
 {
     if(INTF) //testar o flag
     {
-        
+        //INTCONbits.INTE = 0;
     }
     return;
 };*/
