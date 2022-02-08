@@ -33,7 +33,7 @@ void inicializar()
     //TRISD = ?
 
     //interrupções
-    /*OPTION_REGbits.INTEDG = 0;
+    /*OPTION_REGbits.INTEDG = 0;// ou 1
     INTCONbits.GIE = 1;
     INTCONbits.INTE = 1;*/
     
@@ -42,6 +42,16 @@ void inicializar()
     PORTC = 0;
     PORTD = 0;
 };
+
+//tratamento da interrupção
+/*void __interrupt() TrataInt(void)
+{
+    if(INTF) //testar o flag
+    {
+        
+    }
+    return;
+};*/
 
 //função de delay
 void DelaySegundo()
