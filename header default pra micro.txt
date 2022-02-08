@@ -17,6 +17,7 @@
 #define _XTAL_FREQ 4000000
 
 //definições
+#define Delay __delay_ms
 
 //declaração de variaveis globais
 //__bit...
@@ -52,12 +53,6 @@ void inicializar()
     }
     return;
 };*/
-
-//função de delay
-void DelaySegundo()
-{
-  __delay_ms(1000);  
-};
 
 //funções
 
