@@ -18,9 +18,11 @@
 
 //definições
 #define Delay __delay_ms
+#define Bit __bit
 
 //declaração de variaveis globais
 //__bit...
+Bit flag;
 
 //função padrão de inicialização
 void inicializar()
@@ -50,6 +52,7 @@ void inicializar()
     if(INTF) //testar o flag
     {
         //INTCONbits.INTE = 0;
+	flag = 1;
     }
     return;
 };*/
