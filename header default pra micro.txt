@@ -31,6 +31,11 @@ void inicializar()
     TRISB = 255;//inputs 1111 1111 = 255
     TRISC = 0;//outputs 0000 0000 = 0
     //TRISD = ?
+
+    //interrupções
+    /*OPTION_REGbits.INTEDG = 0;
+    INTCONbits.GIE = 1;
+    INTCONbits.INTE = 1;*/
     
     //clear nas ports
     PORTB = 255;
