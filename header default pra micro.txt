@@ -25,7 +25,7 @@
 void inicializar()
 {
     //configuração de inicialização
-    OPTION_REG = 127; //configura o PIC
+    OPTION_REG = 0b01111111; //configura o PIC
     
     //inicialização das portas
     TRISB = 255;//inputs 1111 1111 = 255
@@ -33,7 +33,7 @@ void inicializar()
     //TRISD = ?
 
     //interrupções
-    /*OPTION_REGbits.INTEDG = 0;// ou 1
+    /*//OPTION_REGbits.INTEDG = 0;// ou 1
     INTCONbits.GIE = 1;
     INTCONbits.INTE = 1;*/
     
