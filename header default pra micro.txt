@@ -21,8 +21,7 @@
 #define Bit __bit
 
 //declaração de variaveis globais
-//__bit...
-Bit flag;
+//Bit flag;
 
 //função padrão de inicialização
 void inicializar()
