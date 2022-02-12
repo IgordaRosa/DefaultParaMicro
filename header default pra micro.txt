@@ -50,7 +50,7 @@ void inicializar()
 {
     if(INTF) //testar o flag
     {
-        //INTCONbits.INTE = 0;
+        //INTCONbits.INTF = 0;
 	flag = 1;
     }
     return;
