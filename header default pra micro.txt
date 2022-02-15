@@ -42,7 +42,16 @@ void inicializar()
 
     //timers
     INTCONbits.TMR0IE = 1;
-    TMR0 = ?;*/
+    INTCONbits.PEIE = 1;
+    PIE1bits.TMR1IE = 1;
+    T1CONbits.TMR1CS = 0;
+    T1CONbits.T1CKPS0 = 1;
+    T1CONbits.T1CKPS1 = 1;
+    T1CONbits.TMR1ON = 1;
+
+    TMR0 = ?;
+    TMR1L = ?;
+    TMR1H = ?;*/
     
     //clear nas ports
     PORTB = 255;
@@ -55,12 +64,20 @@ void inicializar()
 {
     if(INTF) //testar o flag
     {
-      INTCONbits.INTF = 0;
+  	INTCONbits.INTF = 0;
 
     }
     if(TMR0IF)
     {
 	INTCONbits.TMR0IF = 0;
+	TMR0 = ?;
+
+    }
+    if(TMR1IF)
+    {
+	PIR1bits.TMR1IF = 0;
+	TMR1L = ?;
+      TMR1H = ?;
 
     }
     return;
