@@ -30,6 +30,7 @@ void inicializar()
     OPTION_REG = 0b01111111; //configura o PIC
     
     //inicialização das portas
+    //TRISA = 0b00011111;
     TRISB = 255;//inputs 1111 1111 = 255
     TRISC = 0;//outputs 0000 0000 = 0
     //TRISD = ?
