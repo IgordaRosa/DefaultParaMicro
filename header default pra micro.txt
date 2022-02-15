@@ -35,9 +35,12 @@ void inicializar()
     //TRISD = ?
 
     //interrupções
-    /*//OPTION_REGbits.INTEDG = 0;// ou 1
+    /*OPTION_REGbits.INTEDG = 0;// ou 1
     INTCONbits.GIE = 1;
-    INTCONbits.INTE = 1;*/
+    INTCONbits.INTE = 1;
+
+    //timers
+    INTCONbits.TMR0IE = 1;*/
     
     //clear nas ports
     PORTB = 255;
@@ -50,8 +53,13 @@ void inicializar()
 {
     if(INTF) //testar o flag
     {
-        //INTCONbits.INTF = 0;
-	flag = 1;
+      INTCONbits.INTF = 0;
+
+    }
+    if(TMR0IF)
+    {
+	INTCONbits.TMR0IF = 0;
+
     }
     return;
 };*/
