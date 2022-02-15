@@ -40,7 +40,8 @@ void inicializar()
     INTCONbits.INTE = 1;
 
     //timers
-    INTCONbits.TMR0IE = 1;*/
+    INTCONbits.TMR0IE = 1;
+    TMR0 = ?;*/
     
     //clear nas ports
     PORTB = 255;
