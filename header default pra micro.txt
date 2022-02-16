@@ -15,7 +15,7 @@
 //#pragma config WDTE = ON
 
 //definir uso de clock externo
-//#pragma config FOSC = HS
+#pragma config FOSC = HS
 
 //habilitar reset ao ligar
 //#pragma config PWRTE = ON
