@@ -11,6 +11,9 @@
 #include <pic16f877a.h>//padrão do PIC
 #include <stdio.h> //padrão do C
 
+//ligando o watchdog time, CLRWDT(); para usar
+//#pragma config WDTE = ON
+
 //frequencia do cristal
 #define _XTAL_FREQ 4000000
 
