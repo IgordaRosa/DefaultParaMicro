@@ -29,8 +29,8 @@ void __interrupt() TrataInt(void)
     if(TMR1IF) //testa, caso seja interrupção do timer 1.
     {
 	PIR1bits.TMR1IF = 0;
-	TMR1L = 0x;
-    TMR1H = ?;
+	TMR1L = 0xDC; // iniciar (65536-62500) 
+      TMR1H = 0x0B; // 3036. quando estourar 62500, passou-se 0,5 segundos.
 
     }
     return;
