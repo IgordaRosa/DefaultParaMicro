@@ -39,8 +39,8 @@ void inicializar()
     INTCONbits.INTE = 1;
     
     //timer 0
-    OPTION_REGbits.TOCS = 1;
-    OPTION_REGbits.TOSE = 1;
+    OPTION_REGbits.T0CS = 1;
+    OPTION_REGbits.T0SE = 1;
     OPTION_REGbits.PS0 = 1;
     OPTION_REGbits.PS1 = 1;
     OPTION_REGbits.PS2 = 1;
