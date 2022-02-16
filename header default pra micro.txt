@@ -59,6 +59,9 @@ void inicializar()
     PORTD = 0;
 };
 
+//funções
+
+
 //tratamento da interrupção
 /*void __interrupt() TrataInt(void)
 {
@@ -82,9 +85,5 @@ void inicializar()
     }
     return;
 };*/
-
-//funções
-
-
 
 #endif
