@@ -11,8 +11,6 @@
 #include <pic16f877a.h>//padrão do PIC
 #include <stdio.h> //padrão do C
 
-//inclusão de outros headers
-
 //frequencia do cristal
 #define _XTAL_FREQ 4000000
 
@@ -21,69 +19,55 @@
 #define Bit __bit
 
 //declaração de variaveis globais
-//Bit flag;
+
 
 //função padrão de inicialização
 void inicializar()
 {
     //configuração de inicialização
-    OPTION_REG = 0b01111111; //configura o PIC
+    OPTION_REG = 0b01111111; //configura o PIC, ativa os pull-ups
     
     //inicialização das portas
-    //TRISA = 0b00011111;
-    TRISB = 255;//inputs 1111 1111 = 255
-    TRISC = 0;//outputs 0000 0000 = 0
-    //TRISD = ?
+    TRISA = 0b00011111;//deixa como input a porta que detecta o timer 0 externo
+    TRISB = 255;//inputs
+    TRISC = 0;//outputs
+    TRISD = 0;//outputs
 
-    //interrupções
-    /*OPTION_REGbits.INTEDG = 0;// ou 1
+    //interrupções externas
+    OPTION_REGbits.INTEDG = 0;
     INTCONbits.GIE = 1;
     INTCONbits.INTE = 1;
-
-    //timers
+    
+    //timer 0
+    OPTION_REGbits.TOCS = 1;
+    OPTION_REGbits.TOSE = 1;
+    OPTION_REGbits.PS0 = 1;
+    OPTION_REGbits.PS1 = 1;
+    OPTION_REGbits.PS2 = 1;
+    OPTION_REGbits.PSA = 1;
     INTCONbits.TMR0IE = 1;
+    TMR0 = 251;//5 tics para 256
+    
+    //timer 1
     INTCONbits.PEIE = 1;
     PIE1bits.TMR1IE = 1;
     T1CONbits.TMR1CS = 0;
     T1CONbits.T1CKPS0 = 1;
     T1CONbits.T1CKPS1 = 1;
-    T1CONbits.TMR1ON = 1;
-
-    TMR0 = ?;
-    TMR1L = ?;
-    TMR1H = ?;*/
+    TMR1L = 0xDC; // iniciar (65536-62500) 
+    TMR1H = 0x0B; // 3036. quando estourar 62500, passou-se 0,5 segundos.
+    T1CONbits.TMR1ON = 1; // liga o timer
     
     //clear nas ports
     PORTB = 255;
     PORTC = 0;
     PORTD = 0;
+    
+    //inicialização de portas
+    
 };
 
 //funções
 
-
-//tratamento da interrupção
-/*void __interrupt() TrataInt(void)
-{
-    if(INTF) //testar o flag
-    {
-  	INTCONbits.INTF = 0;
-
-    }
-    if(TMR0IF)
-    {
-	INTCONbits.TMR0IF = 0;
-	TMR0 = ?;
-
-    }
-    if(TMR1IF)
-    {
-	PIR1bits.TMR1IF = 0;
-	TMR1L = ?;
-      TMR1H = ?;
-
-    }
-    return;
-};*/
 
 #endif
