@@ -8,6 +8,8 @@
 #define LCD_H
 
 //definições
+#define Delay __delay_ms
+
 #define LCD PORTD
 #define RS PORTCbits.RC5
 #define RW PORTCbits.RC6
