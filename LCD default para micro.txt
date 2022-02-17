@@ -111,20 +111,46 @@ void Enable()
 void ClearLCD()
 {
     RS = 0;
-    LCD = 0x01;
-    Enable();
+    LCD = 0x01;Enable();
     RS = 1;  
 };
 
+void SegundaLinha()// 0x00-0x0F e 0x40-0x4F
+{
+    RS = 0;
+    
+    LCD = 0b11000000;Enable();
+    
+    RS = 1;
+}
+
+void CriarChar01LCD()
+{
+    RS = 0;
+    LCD = 0b01000000;Enable();
+    RS = 1;
+    //desenhe o seu character igonrando os 3 primeiros bits
+    LCD = 0b00000000   ;Enable();
+    LCD = 0b00000000   ;Enable();
+    LCD = 0b00000000   ;Enable();
+    LCD = 0b00000000   ;Enable();
+    LCD = 0b00000000   ;Enable();
+    LCD = 0b00000000   ;Enable();
+    LCD = 0b00000000   ;Enable();
+    RS = 0;
+    LCD = 0b10000000;Enable();
+    RS = 1;
+}
+
 void inicializarLCD()
 {
-    LCD = 0x36;
-    Enable();
+    LCD = 0x38;Enable();
     
-    LCD = 0x0C;
-    Enable();
+    LCD = 0x0C;Enable();
     
     ClearLCD();
+    
+    CriarChar01LCD();
     
     RS = 1;
 };
