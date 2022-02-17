@@ -115,6 +115,15 @@ void ClearLCD()
     RS = 1;  
 };
 
+void PrimeiraLinha()// 0x00-0x0F e 0x40-0x4F
+{
+    RS = 0;
+    
+    LCD = 0b10000000;Enable();
+    
+    RS = 1;
+};
+
 void SegundaLinha()// 0x00-0x0F e 0x40-0x4F
 {
     RS = 0;
