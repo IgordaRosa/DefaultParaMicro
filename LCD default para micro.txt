@@ -146,9 +146,6 @@ void CriarChar01LCD()
     LCD = 0b00000000   ;Enable();
     LCD = 0b00000000   ;Enable();
     LCD = 0b00000000   ;Enable();
-    RS = 0;
-    LCD = 0b10000000;Enable();
-    RS = 1;
 }
 
 void inicializarLCD()
