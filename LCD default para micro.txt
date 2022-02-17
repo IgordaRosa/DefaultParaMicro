@@ -8,7 +8,13 @@
 #define LCD_H
 
 //definições
+#ifndef Delay
 #define Delay __delay_ms
+#endif
+
+#ifndef _XTAL_FREQ
+#define _XTAL_FREQ 4000000
+#endif 
 
 #define LCD PORTD
 #define RS PORTCbits.RC5
